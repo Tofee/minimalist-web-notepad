@@ -3,13 +3,20 @@
 body {
     margin: 0;
     background: #ebeef1;
+    height: 100vh;
+    display: flex;
 }
-.container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    bottom: 20px;
-    left: 20px;
+.left {
+    width: 15%;
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+.right {
+    width: 85%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 #content {
     font-size: 100%;
@@ -26,6 +33,15 @@ body {
 }
 #printable {
     display: none;
+}
+
+a, a:link, a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 @media (prefers-color-scheme: dark) {

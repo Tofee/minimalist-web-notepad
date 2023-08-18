@@ -53,13 +53,28 @@ if (isset($_GET['raw']) || strpos($_SERVER['HTTP_USER_AGENT'], 'curl') === 0 || 
     <link rel="stylesheet" href="<?php print $base_url; ?>/styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class='left'>
+        <span>
+        	<ul>
+            <?php
+            $files = scandir($save_path);
+            for ($i = 0; $i<count($files);$i++) {
+                $fileName = $files[$i];
+                if ($fileName[0] == '.') continue;
+                echo '<li><a href="./' . $fileName . '">'. $fileName .'</a></li>';
+            }
+            ?>
+            </ul>
+        </span>
+    </div>
+    <div class="container right">
         <textarea id="content"><?php
             if (is_file($path)) {
                 print htmlspecialchars(file_get_contents($path), ENT_QUOTES, 'UTF-8');
             }
         ?></textarea>
     </div>
+
     <pre id="printable"></pre>
     <script src="<?php print $base_url; ?>/script.js"></script>
 </body>
