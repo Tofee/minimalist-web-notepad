@@ -36,7 +36,6 @@ body {
 }
 
 a, a:link, a:visited{
-    color: white;
     text-decoration: none;
 }
 
@@ -52,6 +51,9 @@ a:hover{
         background: #282923;
         color: #f8f8f2;
         border: 0;
+    }
+    a, a:link, a:visited{
+        color: white;
     }
 }
 
